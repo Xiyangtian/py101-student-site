@@ -113,25 +113,25 @@ print(total)   <span class="c"># 105350</span></pre></div>
 </ul></div>
 
 <h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L6_hw"> 作业已完成</label></h2>
-<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">用程序计算 200+201+202+…+499+500 的结果。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>total = 0
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">用程序计算 200+201+202+…+499+500 的结果。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>total = 0
 for i in range(200, 501):
     total += i
 print(total)   # 105350</div><div class="explain">range(200,501) 含 200 不含 501。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">输出 0~100 中不能被 19 整除的数，并计算它们的总和。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>total = 0
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">输出 0~100 中不能被 19 整除的数，并计算它们的总和。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>total = 0
 for i in range(101):
     if i % 19 != 0:
         print(i)
         total += i
 print("总和:", total)</div><div class="explain">i % 19 != 0 表示不能被 19 整除。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">输入三个整数作为边长，判断能否构成三角形，能则输出周长，否则输出“不成立”。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a, b, c = int(input()), int(input()), int(input())
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">输入三个整数作为边长，判断能否构成三角形，能则输出周长，否则输出“不成立”。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a, b, c = int(input()), int(input()), int(input())
 if a + b &gt; c and a + c &gt; b and b + c &gt; a:
     print(a + b + c)
 else:
     print("不成立")</div><div class="explain">任意两边之和大于第三边。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">输入一个正整数 n，输出 n 行的直角三角形（用 * 号）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>n = int(input())
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">输入一个正整数 n，输出 n 行的直角三角形（用 * 号）。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>n = int(input())
 for i in range(1, n + 1):
     print("*" * i)</div><div class="explain">第 i 行输出 i 个 *。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">打印 9×9 乘法表。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>for i in range(1, 10):
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">打印 9×9 乘法表。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>for i in range(1, 10):
     for j in range(1, i + 1):
         print(f"{j}*{i}={j*i}", end=" ")
     print()</div><div class="explain">外层行、内层列，用 end=" " 控制不换行。</div></details></div>
@@ -140,7 +140,7 @@ for i in range(1, n + 1):
 <h2>📌 自助使用说明</h2>
 <ul>
 <li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
-<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>选择题直接在网页上做；编程题点「🖥️ 打开编程页面」按钮，在新标签页进入在线 Python 编辑器，把程序写出来并运行。</li>
 <li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
 </ul>
 </div>

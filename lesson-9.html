@@ -97,23 +97,23 @@ else:
 <li><span class="opt">B.</span>  输入有误</li>
 <li><span class="opt">C.</span>  请输入数值</li>
 <li><span class="opt">D.</span>  没有输出结果</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">float("好的") 会报错，被 except 捕获，输出“输入有误”。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个 try-except 程序：让用户反复输入整数，直到输入合法才结束。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>while True:
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个 try-except 程序：让用户反复输入整数，直到输入合法才结束。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>while True:
     try:
         x = int(input())
         print(x)
         break
     except:
         print("输入的不是整数，请重试")</div><div class="explain">try 里放可能出错的操作，except 处理异常。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 eval 计算用户输入的一个表达式（如 2*3+4）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>expr = input("输入算式: ")
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 eval 计算用户输入的一个表达式（如 2*3+4）。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>expr = input("输入算式: ")
 print(eval(expr))</div><div class="explain">eval 把字符串当表达式计算。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">真题·分别输入两个正整数，输出两数的差（大数减小数）与两数的和。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a = int(input())
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">真题·分别输入两个正整数，输出两数的差（大数减小数）与两数的和。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a = int(input())
 b = int(input())
 print(max(a, b) - min(a, b))
 print(a + b)</div><div class="explain">用 max/min 求大数减小数。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">真题·输入 5 个评委的分数（空格隔开），输出平均分（四舍五入到整数）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>s = input()
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">真题·输入 5 个评委的分数（空格隔开），输出平均分（四舍五入到整数）。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>s = input()
 nums = list(map(int, s.split()))
 print(round(sum(nums) / len(nums)))</div><div class="explain">split() 拆分，map(int) 转整数，round() 四舍五入。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">真题·输入两个正整数，输出它们的最小公倍数。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a, b = int(input()), int(input())
+<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">真题·输入两个正整数，输出它们的最小公倍数。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a, b = int(input()), int(input())
 # 先求最大公约数
 for i in range(1, min(a, b) + 1):
     if a % i == 0 and b % i == 0:
@@ -124,7 +124,7 @@ print(a * b // gcd)</div><div class="explain">最小公倍数 = 两数之积 // 
 <h2>📌 自助使用说明</h2>
 <ul>
 <li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
-<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>选择题直接在网页上做；编程题点「🖥️ 打开编程页面」按钮，在新标签页进入在线 Python 编辑器，把程序写出来并运行。</li>
 <li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
 </ul>
 </div>

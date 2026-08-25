@@ -120,11 +120,11 @@ t.done()</pre></div>
 </ul></div>
 
 <h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L8_hw"> 作业已完成</label></h2>
-<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">写一个函数 sum_range(n)，计算 0 到 n 的和，并调用输出 sum_range(5)。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>def sum_range(n):
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">写一个函数 sum_range(n)，计算 0 到 n 的和，并调用输出 sum_range(5)。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>def sum_range(n):
     return sum(range(n + 1))
 
 print(sum_range(5))  # 15</div><div class="explain">range(n+1) 生成 0~n。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个画正 N 边形的函数：输入 n（边数）和 a（边长），画出正 n 边形；若 n&lt;3 则结束。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个画正 N 边形的函数：输入 n（边数）和 a（边长），画出正 n 边形；若 n&lt;3 则结束。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
 
 def draw_polygon(n, a):
     if n &lt; 3:
@@ -137,7 +137,7 @@ def draw_polygon(n, a):
 n, a = int(input()), int(input())
 draw_polygon(n, a)
 t.done()</div><div class="explain">n=3 画正三角形，n=4 画正方形；n&lt;3 直接结束。</div></details></div>
-<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 turtle 画一个边长 100 的蓝色正方形（含颜色填充）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 turtle 画一个边长 100 的蓝色正方形（含颜色填充）。</p><a class="code-btn" href="https://turtle.codemao.cn/editor/python_web/" target="_blank" rel="noopener" title="点击在新标签页打开在线 Python 编辑并编写程序">🖥️ 打开编程页面 ›</a><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
 t.pencolor("blue")
 t.begin_fill()
 t.fillcolor("blue")
@@ -151,7 +151,7 @@ t.done()</div><div class="explain">begin_fill()/end_fill() 填充封闭图形。
 <h2>📌 自助使用说明</h2>
 <ul>
 <li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
-<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>选择题直接在网页上做；编程题点「🖥️ 打开编程页面」按钮，在新标签页进入在线 Python 编辑器，把程序写出来并运行。</li>
 <li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
 </ul>
 </div>
