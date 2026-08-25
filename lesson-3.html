@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L3 运算符与表达式 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #8e44ad; --page-soft: #f9f5ff; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L3 · 第 3 课</div>
+<h1>运算符与表达式</h1>
+<p>算术、比较、逻辑运算符与优先级</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>会用 + - * / % // ** 做算术</li>
+<li>会用 == != &gt; &lt; &gt;= &lt;= 比较，返回 True/False</li>
+<li>会用 not and or 组合条件</li>
+<li>掌握优先级与结合性</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>算术运算符<label class="done"><input type="checkbox" data-ls="nctl1_L3_k1"> 已会</label></div>
+<div class="meta-tip">💡 数学课老朋友，新认识 // （整除）和 % （取余）。</div>
+<p class="hint">做数学运算，返回数值。</p>
+<div class="code-block"><pre>print(<span class="n">5</span> + <span class="n">3</span>)     <span class="c"># 8</span>
+print(<span class="n">5</span> / <span class="n">3</span>)     <span class="c"># 1.6666...（除法是浮点数）</span>
+print(<span class="n">5</span> % <span class="n">3</span>)     <span class="c"># 2（取余）</span>
+print(<span class="n">5</span> ** <span class="n">3</span>)    <span class="c"># 125（幂）</span>
+print(<span class="n">7</span> // <span class="n">2</span>)    <span class="c"># 3（整除向下）</span></pre></div>
+<p class="note-text">% 常用来判断奇偶/整除；/ 结果一定是浮点数。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>比较运算符<label class="done"><input type="checkbox" data-ls="nctl1_L3_k2"> 已会</label></div>
+<div class="meta-tip">💡 只回答『是/否』的问题：是否相等、谁大谁小。</div>
+<p class="hint">比较两值，返回布尔 True/False。</p>
+<div class="code-block"><pre>print(<span class="n">5</span> == <span class="n">3</span>)   <span class="c"># False（等于）</span>
+print(<span class="n">5</span> != <span class="n">3</span>)   <span class="c"># True（不等于）</span>
+print(<span class="n">5</span> &gt; <span class="n">3</span>)    <span class="c"># True</span>
+print(<span class="n">5</span> &gt;= <span class="n">5</span>)   <span class="c"># True</span>
+print(<span class="n">3</span> &lt;= <span class="n">1</span>)   <span class="c"># False</span></pre></div>
+<p class="note-text">= 赋值，== 比较。3 == "3" 结果是 False（类型不同）。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>逻辑运算符<label class="done"><input type="checkbox" data-ls="nctl1_L3_k3"> 已会</label></div>
+<div class="meta-tip">💡 and 要都对、or 有一个对就对、not 反过来。</div>
+<p class="hint">组合多个条件，常用于 if。</p>
+<div class="code-block"><pre>print(<span class="k">not</span> <span class="k">True</span>)          <span class="c"># False</span>
+print(<span class="k">True</span> <span class="k">and</span> <span class="k">False</span>)   <span class="c"># False</span>
+print(<span class="k">True</span> <span class="k">or</span> <span class="k">False</span>)    <span class="c"># True</span>
+
+<span class="c"># 短路：and 左假不再算右边；or 左真不再算右边</span>
+print(<span class="k">False</span> <span class="k">and</span> (<span class="n">1</span>/<span class="n">0</span>))  <span class="c"># 不报错，右边没执行</span></pre></div>
+<p class="note-text">短路特性常考：False and 后面写什么都没关系，不会执行。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>优先级<label class="done"><input type="checkbox" data-ls="nctl1_L3_k4"> 已会</label></div>
+<div class="meta-tip">💡 拿不准就加括号，最保险也最好读。</div>
+<p class="hint">从高到低：括号 &gt; 幂 &gt; 乘除 &gt; 加减 &gt; 比较 &gt; 逻辑。</p>
+<div class="code-block"><pre>print(<span class="n">2</span> + <span class="n">3</span> * <span class="n">4</span>)      <span class="c"># 14：先乘后加</span>
+print((<span class="n">2</span> + <span class="n">3</span>) * <span class="n">4</span>)    <span class="c"># 20：括号优先</span>
+print(<span class="n">2</span> ** <span class="n">3</span> ** <span class="n">2</span>)    <span class="c"># 512：幂是右结合</span>
+print(<span class="n">8</span> - <span class="n">3</span> + <span class="n">2</span>)      <span class="c"># 7：左结合</span></pre></div>
+<p class="note-text">算术左结合、幂右结合；把不确定的用括号包起来。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>用『% 取余』判断奇偶、整除，是考试高频用法。</li>
+<li><strong>要点：</strong>and/or/not 常与 if 结合使用，要配合 L5 一起讲。</li>
+<li><strong>常见错误：</strong>把 = 当比较用，写成 if x = 5（应该是 ==）。</li>
+<li><strong>常见错误：</strong>35/6 得到浮点数，做 int() 时忘记先算对。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L3_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+print(1 &lt;= 2, 2 == 3)</p><ul class="options"><li><span class="opt">A.</span>  None</li>
+<li><span class="opt">B.</span>  False False</li>
+<li><span class="opt">C.</span>  False True</li>
+<li><span class="opt">D.</span>  True False</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>D</div><div class="explain">1&lt;=2 为 True，2==3 为 False。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+x = 3
+x = x * 6 + 1
+print(x)</p><ul class="options"><li><span class="opt">A.</span>  4</li>
+<li><span class="opt">B.</span>  7</li>
+<li><span class="opt">C.</span>  19</li>
+<li><span class="opt">D.</span>  21</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>C</div><div class="explain">3*6+1=19。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">表达式 7 // 2 的值是（　）。</p><ul class="options"><li><span class="opt">A.</span>  3.5</li>
+<li><span class="opt">B.</span>  3</li>
+<li><span class="opt">C.</span>  4</li>
+<li><span class="opt">D.</span>  7</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">// 是整除（向下取整），7//2=3。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">运行以下代码，输出的结果是（　）。
+print(int(15/6 + 3.3))</p><ul class="options"><li><span class="opt">A.</span>  1</li>
+<li><span class="opt">B.</span>  5</li>
+<li><span class="opt">C.</span>  5.8</li>
+<li><span class="opt">D.</span>  6</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">15/6=2.5，2.5+3.3=5.8，int(5.8)=5。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+a = int(5.8) &gt; int(5.4)
+b = 5.8 &gt; 5.4
+print(a and b)</p><ul class="options"><li><span class="opt">A.</span>  1</li>
+<li><span class="opt">B.</span>  False</li>
+<li><span class="opt">C.</span>  True</li>
+<li><span class="opt">D.</span>  程序出错</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">int(5.8)=5,int(5.4)=5，5&gt;5 为 False；b 为 True；False and True=False。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+a, b = 4, 5
+print((a == b) + (a &lt;= b) + (a &gt;= b) + (a != b))</p><ul class="options"><li><span class="opt">A.</span>  0</li>
+<li><span class="opt">B.</span>  1</li>
+<li><span class="opt">C.</span>  2</li>
+<li><span class="opt">D.</span>  3</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>C</div><div class="explain">False+False+True+True = 0+0+1+1 = 2。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 7 题</div><p class="q-text">写一个程序：输入一个整数，并判断它是否为偶数（用 % 和 ==），输出“偶数/奇数”。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>n = int(input())
+if n % 2 == 0:
+    print("偶数")
+else:
+    print("奇数")</div><div class="explain">n % 2 == 0 表明能被 2 整除。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-2.html" class="lnav">← L2 变量与数据类型</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-4.html" class="lnav">L4 列表 →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

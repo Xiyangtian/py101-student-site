@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L2 变量与数据类型 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #e74c3c; --page-soft: #fff5f5; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L2 · 第 2 课</div>
+<h1>变量与数据类型</h1>
+<p>变量、命名、注释，以及四大基本类型</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>理解变量，掌握命名规则与保留字</li>
+<li>会用 单行# 和 多行三引号 注释</li>
+<li>认识字符串/整数/浮点数/布尔四种类型</li>
+<li>会用 str/int/float/bool 做类型转换</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>变量 —— 电脑的碗<label class="done"><input type="checkbox" data-ls="nctl1_L2_k1"> 已会</label></div>
+<div class="meta-tip">💡 碗是一样的碗，贴的标签（变量名）不一样，装的东西也不一样。</div>
+<p class="hint">变量像一个贴了标签的碗，用来存数据，通过名字访问。</p>
+<div class="code-block"><pre>name = <span class="s">"小明"</span>     <span class="c"># 字符串</span>
+grade = <span class="n">13</span>        <span class="c"># 整数</span>
+tall = <span class="n">1.55</span>       <span class="c"># 浮点数</span>
+print(<span class="s">"我叫"</span>, name, <span class="s">"今年"</span>, grade, <span class="s">"岁"</span>)</pre></div>
+<p class="note-text">= 是赋值，把右边数据存进左边变量。变量要先赋值再用。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>变量命名规则<label class="done"><input type="checkbox" data-ls="nctl1_L2_k2"> 已会</label></div>
+<div class="meta-tip">💡 名字要像路牌：别人看得懂、不撞名、不打头阵用数字。</div>
+<p class="hint">字母、数字、下划线；数字不能开头；不能用保留字。</p>
+<div class="code-block"><pre><span class="c"># 合法：</span>
+my_name = <span class="s">"Tom"</span>
+_score2 = <span class="n">90</span>
+
+<span class="c"># 非法：</span>
+<span class="c"># 1name = 5   数字开头 ❌</span>
+<span class="c"># if = 5      保留字 ❌</span>
+<span class="c"># my-name = 5 含短横线 ❌</span></pre></div>
+<p class="note-text">不能用保留字（if、while、True、False等）做变量名；区分大小写。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>注释 —— 给代码写说明<label class="done"><input type="checkbox" data-ls="nctl1_L2_k3"> 已会</label></div>
+<div class="meta-tip">💡 # 是单行便签；三个引号是整段便签。</div>
+<p class="hint">注释不会被执行，只给人看。</p>
+<div class="code-block"><pre><span class="c"># 这是单行注释（用 # 开头）</span>
+print(<span class="s">"你好"</span>)   <span class="c"># 行尾也可以</span>
+
+<span class="s">"""
+这是多行注释
+用三个双引号或单引号包围
+"""</span></pre></div>
+<p class="note-text">考试常考：单行注释用 #，多行用三引号。双引号是字符串，不是注释。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>四大基本数据类型<label class="done"><input type="checkbox" data-ls="nctl1_L2_k4"> 已会</label></div>
+<div class="meta-tip">💡 文字要引号、数字分两种（带不带小数点）、真假是开关、空心是 None。</div>
+<p class="hint">字符串、整数、浮点数、布尔。</p>
+<div class="code-block"><pre>s = <span class="s">"Hello"</span>      <span class="c"># 字符串 str</span>
+n = <span class="n">42</span>           <span class="c"># 整数 int</span>
+f = <span class="n">3.14</span>         <span class="c"># 浮点数 float</span>
+b = <span class="k">True</span>         <span class="c"># 布尔 bool（True/False）</span>
+none = <span class="k">None</span>      <span class="c"># 无值</span></pre></div>
+<p class="note-text">字符串可 + 拼接、\n 换行；用 type(x) 查看类型。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 5</span>类型转换 —— 翻译官<label class="done"><input type="checkbox" data-ls="nctl1_L2_k5"> 已会</label></div>
+<div class="meta-tip">💡 str/int/float/bool 是四个翻译官，把一种类型翻译成另一种。</div>
+<p class="hint">在字符串、整数、浮点数、布尔之间互相转换。</p>
+<div class="code-block"><pre>age = <span class="n">14</span>
+print(<span class="s">"你今年"</span> + str(age) + <span class="s">"岁"</span>)
+
+a = int(<span class="s">"123"</span>)       <span class="c"># 字符串→整数</span>
+b = float(<span class="n">4</span>)         <span class="c"># 整数→浮点数 4.0</span>
+print(int(<span class="n">3.6</span>))      <span class="c"># 3（截断，不是四舍五入）</span>
+print(bool(<span class="n">0</span>))       <span class="c"># False</span>
+print(bool(<span class="s">" "</span>))     <span class="c"># True（含空格的字符串为真）</span></pre></div>
+<p class="note-text">int("3.5") 会报错，需先 float() 再 int()；float→int 是截断。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>把变量比作『贴了标签的盒子』，孩子容易理解。</li>
+<li><strong>要点：</strong>强调 input() 得到的是字符串，要算数得转 int/float。</li>
+<li><strong>常见错误：</strong>int("3.5") 报错——应写成 int(float("3.5"))。</li>
+<li><strong>常见错误：</strong>把 str(age) 忘掉，直接字符串+数字导致报错。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L2_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">选项中，常用于 Python 语言注释的符号不包括（　）。</p><ul class="options"><li><span class="opt">A.</span>  # 井号</li>
+<li><span class="opt">B.</span>  "" 双引号</li>
+<li><span class="opt">C.</span>  三引号 """</li>
+<li><span class="opt">D.</span>  单引号三引号 '''</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">双引号用于字符串，不是注释；# 单行注释，三引号多行注释。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">下列选项中，不属于字符串类型的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  'apple'</li>
+<li><span class="opt">B.</span>  "banana"</li>
+<li><span class="opt">C.</span>  "'pear"</li>
+<li><span class="opt">D.</span>  #peach</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>D</div><div class="explain"># 开头的 #peach 是注释，不是字符串字面量。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">选项中，不能直接转换为整型的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  "四十一"</li>
+<li><span class="opt">B.</span>  4</li>
+<li><span class="opt">C.</span>  2.33</li>
+<li><span class="opt">D.</span>  True</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>A</div><div class="explain">int() 无法把中文数字“四十一”转成整数。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">选项中不符合 Python 变量命名规则的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  a1b2</li>
+<li><span class="opt">B.</span>  William Shakespear</li>
+<li><span class="opt">C.</span>  _2x</li>
+<li><span class="opt">D.</span>  For</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>D</div><div class="explain">变量名不能含空格，For 里有空格所以不合法。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">选项中变量名在 Python 程序中合法的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  123_abc</li>
+<li><span class="opt">B.</span>  _cat_</li>
+<li><span class="opt">C.</span>  #dog</li>
+<li><span class="opt">D.</span>  while</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">123_abc 以数字开头；#dog 含非法字符 #；while 是保留字。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">写出结果：print(type(3))、print(type(3.0))、print(type("3"))。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>int / float / str</div><div class="explain">type() 返回数据类型：3 是 int，3.0 是 float，"3" 是 str。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 7 题</div><p class="q-text">写一个“个人信息录入”程序：输入姓名、年龄、身高，按固定格式输出（用到 str/int/float 转换）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>name = input("请输入姓名: ")
+age = int(input("请输入年龄: "))
+height = float(input("请输入身高(米): "))
+print("姓名:" + name + " 年龄:" + str(age) + " 身高:" + str(height))</div><div class="explain">input 得到字符串，算数和拼接前要转换类型。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-1.html" class="lnav">← L1 让电脑开口说话</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-3.html" class="lnav">L3 运算符与表达式 →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

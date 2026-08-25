@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L7 字符串与列表的操作 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #e74c3c; --page-soft: #fff5f5; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L7 · 第 7 课</div>
+<h1>字符串与列表的操作</h1>
+<p>共有操作、split/join、字符串与列表互转</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>掌握字符串与列表共有操作：+ * 切片 in for</li>
+<li>掌握字符串特有操作：split() join() strip()，翻转用切片</li>
+<li>掌握列表特有操作：reverse() remove()</li>
+<li>会在字符串与列表间转换</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>共有操作<label class="done"><input type="checkbox" data-ls="nctl1_L7_k1"> 已会</label></div>
+<div class="meta-tip">💡 都一样能：+ 拼、* 复制、切片、用 in 问在不在。</div>
+<p class="hint">字符串和列表很多操作是一样的。</p>
+<div class="code-block"><pre>s = <span class="s">"帅气的方块鸟"</span>
+lst = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>]
+print(s + <span class="s">"老师们"</span>)   <span class="c"># 字符串拼接</span>
+print(lst + [<span class="n">4</span>, <span class="n">5</span>])   <span class="c"># 列表拼接</span>
+print(<span class="s">"红"</span> * <span class="n">3</span>)         <span class="c"># 红红红</span>
+print(<span class="n">2</span> <span class="k">in</span> lst)        <span class="c"># True</span>
+print(<span class="s">"块"</span> <span class="k">in</span> s)       <span class="c"># True</span></pre></div>
+<p class="note-text">拼接/重复生成新对象，原数组不变；in 做成员判断。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>字符串属性<label class="done"><input type="checkbox" data-ls="nctl1_L7_k2"> 已会</label></div>
+<div class="meta-tip">💡 字符串是『不能改』的，只能靠方法或切片得到新字符串。</div>
+<p class="hint">字符串不可变，但有很多方法。</p>
+<div class="code-block"><pre>s = <span class="s">"a,b,c"</span>
+print(s.split(<span class="s">","</span>))       <span class="c"># ["a","b","c"]（拆成列表）</span>
+print(<span class="s">"-"</span>.join([<span class="s">"a"</span>,<span class="s">"b"</span>]))  <span class="c"># "a-b"（拼回字符串）</span>
+print(<span class="s">"  abc  "</span>.strip())     <span class="c"># "abc"（去空格）</span>
+print(<span class="s">"方块鸟"</span>[::-<span class="n">1</span>])        <span class="c"># 鸟块方（翻转用切片）</span>
+<span class="c"># "方块鸟"[0]="x"  # 报错！字符串不可改</span></pre></div>
+<p class="note-text">split() 字符串→列表；join() 列表→字符串，方向相反要记牢。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>列表属性<label class="done"><input type="checkbox" data-ls="nctl1_L7_k3"> 已会</label></div>
+<div class="meta-tip">💡 列表是『可变』的，能直接改、能就地排序反转。</div>
+<p class="hint">列表可变，方法就地修改。</p>
+<div class="code-block"><pre>lst = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>]
+lst.reverse()    <span class="c"># 就地反转</span>
+print(lst)       <span class="c"># [5,4,3,2,1]</span>
+lst.append(<span class="n">6</span>)
+lst.insert(<span class="n">0</span>, <span class="n">0</span>)
+lst.remove(<span class="n">5</span>)    <span class="c"># 删第一个出现的 5</span>
+print(lst)</pre></div>
+<p class="note-text">remove(x) 删第一个匹配值；列表没有值会报错。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>字符串 ↔ 列表<label class="done"><input type="checkbox" data-ls="nctl1_L7_k4"> 已会</label></div>
+<div class="meta-tip">💡 split 把一句话拆成一份份；join 把一份份拼回一句话。</div>
+<p class="hint">处理文本和数据组时经常互转。</p>
+<div class="code-block"><pre>s = <span class="s">"1-2,3-4,5-6"</span>
+print(list(s))          <span class="c"># 逐字符拆</span>
+print(s.split(<span class="s">","</span>))     <span class="c"># ["1-2","3-4","5-6"]</span>
+print(s.split(<span class="s">"-"</span>))     <span class="c"># ["1","2,3","4,5","6"]</span>
+
+lst = [<span class="s">"我有"</span>, <span class="s">"1只"</span>, <span class="s">"小毛驴"</span>]
+print(<span class="s">""</span>.join(lst))     <span class="c"># 我有1只小毛驴</span>
+print(<span class="s">"_"</span>.join(lst))    <span class="c"># 我有_1只_小毛驴</span></pre></div>
+<p class="note-text">列表里若有数字，join 前要先 map(str, 列表) 转字符串。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 5</span>处理数字字符串<label class="done"><input type="checkbox" data-ls="nctl1_L7_k5"> 已会</label></div>
+<div class="meta-tip">💡 先 split 拆开，再 map(int) 变数字，sort 排序，join 拼回去。</div>
+<p class="hint">拆、转、排序、拼。</p>
+<div class="code-block"><pre>s = <span class="s">"2*4*5*1*27*3*9"</span>
+nums = s.split(<span class="s">"*"</span>)
+nums = list(map(int, nums))
+print(max(nums), min(nums))   <span class="c"># 27 1</span>
+nums.sort()
+print(<span class="s">"-"</span>.join(map(str, nums)))  <span class="c"># 1-2-3-4-5-9-27</span></pre></div>
+<p class="note-text">map(int, 列表) 转整数，map(str, 列表) 转字符串。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>把字符串和列表放一起对比着讲，孩子更容易抓住『共性』和『区别』。</li>
+<li><strong>要点：</strong>split/join 的方向多看几遍就会，多举例子。</li>
+<li><strong>常见错误：</strong>试图改字符串的某个字符（字符串不可变）报错。</li>
+<li><strong>常见错误：</strong>把 split() 的结果当字符串用（其实是列表）。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L7_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">阅读程序，选项中描述错误的是（　）。
+str_a = "Python"
+str_b = "computer"
+str_c = str_a[2:4] + str_b[1:3]
+str_d = str_a[-1:-5:-2]
+print(str_c)
+print(str_d)</p><ul class="options"><li><span class="opt">A.</span>  str_a 和 str_b 的数据类型都是字符串</li>
+<li><span class="opt">B.</span>  第 5 行输出 "thom"</li>
+<li><span class="opt">C.</span>  第 6 行输出 "my"</li>
+<li><span class="opt">D.</span>  第 7 行输出结果为 6</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>C</div><div class="explain">str_d=str_a[-1:-5:-2]，即从后往前隔一个取，str_a='Python'，结果是 'noy' 之类，不是 'my'（取决于方向），该选项错误。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">下列选项中，属于列表的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  "red"</li>
+<li><span class="opt">B.</span>  [1, 2, 3]</li>
+<li><span class="opt">C.</span>  3.14</li>
+<li><span class="opt">D.</span>  True</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">列表用方括号 []，B 是列表。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">字符串 s = "帅气的方块鸟老师们"，用切片取出“方块鸟”。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>s = "帅气的方块鸟老师们"
+print(s[3:-3])  # 方块鸟</div><div class="explain">“帅气的”占 3 个字符，[:]，左闭右开。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">处理字符串 "2*4*5*1*27*3*9"：输出最大值、最小值，以及排序后用“-”连接的结果。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>s = "2*4*5*1*27*3*9"
+nums = list(map(int, s.split("*")))
+print(max(nums), min(nums))
+nums.sort()
+print("-".join(map(str, nums)))  # 1-2-3-4-5-9-27</div><div class="explain">split 拆成列表，map(int) 转整数，sorted 再用 join 连接。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-6.html" class="lnav">← L6 循环结构 while / for</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-8.html" class="lnav">L8 函数与小海龟绘图 →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

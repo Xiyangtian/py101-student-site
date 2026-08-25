@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L5 分支结构 if / elif / else · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #F3A21C; --page-soft: #fffbf0; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L5 · 第 5 课</div>
+<h1>分支结构 if / elif / else</h1>
+<p>让程序会『思考』——条件判断与嵌套</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>掌握 if/elif/else 语法，注意冒号和缩进</li>
+<li>会写嵌套分支</li>
+<li>会用 and/or 组合多条件</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>if —— 岔路口<label class="done"><input type="checkbox" data-ls="nctl1_L5_k1"> 已会</label></div>
+<div class="meta-tip">💡 if 是岔路口，看条件决定走哪条路。</div>
+<p class="hint">条件为真走 if 块，否则依次判断 elif，最后走 else。</p>
+<div class="code-block"><pre>score = <span class="n">85</span>
+<span class="k">if</span> score &gt;= <span class="n">90</span>:
+    print(<span class="s">"A"</span>)
+<span class="k">elif</span> score &gt;= <span class="n">80</span>:
+    print(<span class="s">"B"</span>)
+<span class="k">elif</span> score &gt;= <span class="n">70</span>:
+    print(<span class="s">"C"</span>)
+<span class="k">else</span>:
+    print(<span class="s">"再加油"</span>)</pre></div>
+<p class="note-text">条件后必须有冒号 :，代码块必须缩进（4 空格或 1 Tab）。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>多条件 &amp; 嵌套<label class="done"><input type="checkbox" data-ls="nctl1_L5_k2"> 已会</label></div>
+<div class="meta-tip">💡 条件往往是『比较』或『逻辑』的结果；路口里还能有小路口。</div>
+<p class="hint">用 and/or 组合，或用嵌套 if。</p>
+<div class="code-block"><pre>age = <span class="n">15</span>
+gender = <span class="s">"男"</span>
+<span class="k">if</span> gender == <span class="s">"男"</span> <span class="k">and</span> age &lt; <span class="n">18</span>:
+    print(<span class="s">"男孩"</span>)
+<span class="k">elif</span> gender == <span class="s">"男"</span> <span class="k">and</span> age &gt;= <span class="n">18</span>:
+    print(<span class="s">"男人"</span>)
+<span class="k">elif</span> gender == <span class="s">"女"</span> <span class="k">and</span> age &lt; <span class="n">18</span>:
+    print(<span class="s">"女孩"</span>)
+<span class="k">else</span>:
+    print(<span class="s">"女人"</span>)</pre></div>
+<p class="note-text">多条件用 and/or 连接，或拆成嵌套分支，两种写法都对。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>实例：出租车计费<label class="done"><input type="checkbox" data-ls="nctl1_L5_k3"> 已会</label></div>
+<div class="meta-tip">💡 从小到大分段判断，先判断近距离，别漏判。</div>
+<p class="hint">分段计价：一段一个价。</p>
+<div class="code-block"><pre>km = int(input(<span class="s">"请输入距离(km): "</span>))
+<span class="k">if</span> km &lt;= <span class="n">3</span>:
+    cost = <span class="n">10</span>
+<span class="k">elif</span> km &lt;= <span class="n">16</span>:
+    cost = <span class="n">10</span> + (km - <span class="n">3</span>) * <span class="n">2.7</span>
+<span class="k">else</span>:
+    cost = <span class="n">10</span> + (<span class="n">16</span> - <span class="n">3</span>) * <span class="n">2.7</span> + (km - <span class="n">16</span>) * <span class="n">3</span>
+print(cost)</pre></div>
+<p class="note-text">验证：2→10；12→34.3；25→72.1。多分支要按顺序写，否则漏判。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>分支的本质是『根据不同情况走不同路线』。</li>
+<li><strong>要点：</strong>先判断范围再进行下一步，顺序很关键。</li>
+<li><strong>常见错误：</strong>忘写冒号 : 或缩进不对，导致语法错误。</li>
+<li><strong>常见错误：</strong>elif 条件顺序写反，导致永远进不了某些分支。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L5_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">输入成绩：≥90 输出 A，80-89 输出 B，70-79 输出 C，60-69 输出 D，&lt;60 输出 E。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>score = int(input())
+if score &gt;= 90:
+    print("A")
+elif score &gt;= 80:
+    print("B")
+elif score &gt;= 70:
+    print("C")
+elif score &gt;= 60:
+    print("D")
+else:
+    print("E")</div><div class="explain">多分支从大到小排列，避免漏判。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">输入性别（男/女）和年龄，输出称呼：男&amp;&amp;&lt;18→男孩，男&amp;&amp;≥18→男人，女&amp;&amp;&lt;18→女孩，女&amp;&amp;≥18→女人。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>gender = input()
+age = int(input())
+if gender == "男":
+    if age &lt; 18:
+        print("男孩")
+    else:
+        print("男人")
+else:
+    if age &lt; 18:
+        print("女孩")
+    else:
+        print("女人")</div><div class="explain">嵌套分支或 and 组合均可。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">出租车计费：≤3 公里 10 元；3-16 公里超出部分每公里 2.7 元；&gt;16 公里超出部分每公里 3 元。输入路程，输出费用。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>km = int(input())
+if km &lt;= 3:
+    cost = 10
+elif km &lt;= 16:
+    cost = 10 + (km - 3) * 2.7
+else:
+    cost = 10 + (16 - 3) * 2.7 + (km - 16) * 3
+print(cost)</div><div class="explain">验证：2→10，12→34.3，25→72.1。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-4.html" class="lnav">← L4 列表</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-6.html" class="lnav">L6 循环结构 while / for →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

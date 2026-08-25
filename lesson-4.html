@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L4 列表 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #667eea; --page-soft: #f5f7ff; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L4 · 第 4 课</div>
+<h1>列表</h1>
+<p>一组数据的容器——索引、切片、方法与排序</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>会用 [] 创建列表、索引访问、负索引</li>
+<li>会用 append/insert/pop/del 增删改</li>
+<li>会切片 lst[start:end:step]（左闭右开）</li>
+<li>会用 len/max/min/sum/sort/reverse 等</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>创建列表与访问<label class="done"><input type="checkbox" data-ls="nctl1_L4_k1"> 已会</label></div>
+<div class="meta-tip">💡 列表像一排带编号的储物格，编号从 0 开始数。</div>
+<p class="hint">用 [] 装一组数据，元素用逗号隔开。</p>
+<div class="code-block"><pre>numbers = [<span class="n">1</span>, <span class="n">1</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">7</span>, <span class="n">11</span>]
+animals = [<span class="s">"dog"</span>, <span class="s">"pig"</span>, <span class="s">"cat"</span>, <span class="s">"bird"</span>]
+print(len(numbers))   <span class="c"># 6（长度）</span>
+print(numbers[<span class="n">0</span>])     <span class="c"># 1（第一个，索引从 0 起）</span>
+print(numbers[-<span class="n">1</span>])    <span class="c"># 11（最后一个，负索引 -1 起）</span></pre></div>
+<p class="note-text">正索引从 0 起，负索引从 -1 起；len() 返回元素个数。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>增删改<label class="done"><input type="checkbox" data-ls="nctl1_L4_k2"> 已会</label></div>
+<div class="meta-tip">💡 append 往后塞、insert 插队、pop 拿走并告诉你拿了啥。</div>
+<p class="hint">列表是可变的，能直接增、删、改。</p>
+<div class="code-block"><pre>animals = [<span class="s">"dog"</span>, <span class="s">"pig"</span>, <span class="s">"cat"</span>, <span class="s">"bird"</span>]
+animals[<span class="n">0</span>] = <span class="s">"mouse"</span>     <span class="c"># 改第一个</span>
+animals.append(<span class="s">"duck"</span>)    <span class="c"># 末尾追加</span>
+animals.insert(<span class="n">1</span>, <span class="s">"cow"</span>)  <span class="c"># 在索引1处插入</span>
+<span class="k">del</span> animals[<span class="n">2</span>]            <span class="c"># 删除索引2</span>
+popped = animals.pop()    <span class="c"># 删最后一个并返回</span>
+print(animals)
+print(popped)</pre></div>
+<p class="note-text">del 不返回值；pop() 返回被删除的元素（默认删最后一个）。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>切片<label class="done"><input type="checkbox" data-ls="nctl1_L4_k3"> 已会</label></div>
+<div class="meta-tip">💡 切蛋糕：从 start 切到 end 前面一块（左闭右开）。</div>
+<p class="hint">取一段：list[start:end:step]。</p>
+<div class="code-block"><pre>lst = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]
+print(lst[<span class="n">2</span>:<span class="n">5</span>])     <span class="c"># [3,4,5]（含2不含5）</span>
+print(lst[:<span class="n">4</span>])      <span class="c"># [1,2,3,4]</span>
+print(lst[<span class="n">3</span>:])      <span class="c"># [4,5,6]</span>
+print(lst[::-<span class="n">1</span>])    <span class="c"># 反转</span>
+print(lst[::<span class="n">2</span>])     <span class="c"># 步长2：隔一个取</span></pre></div>
+<p class="note-text">左闭右开：冒号左边含、右边不含。这是最容易错的地方。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>常用函数与方法<label class="done"><input type="checkbox" data-ls="nctl1_L4_k4"> 已会</label></div>
+<div class="meta-tip">💡 len/max/min/sum 一键统计；count 数个数；sort 排序。</div>
+<p class="hint">统计、排序、查找一网打尽。</p>
+<div class="code-block"><pre>nums = [<span class="n">2</span>, <span class="n">5</span>, <span class="n">6</span>, <span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>, <span class="n">2</span>, <span class="n">9</span>, <span class="n">9</span>]
+print(max(nums))        <span class="c"># 9</span>
+print(min(nums))        <span class="c"># 2</span>
+print(sum(nums))        <span class="c"># 57</span>
+print(nums.count(<span class="n">9</span>))    <span class="c"># 3</span>
+nums.sort()             <span class="c"># 原地升序</span>
+print(nums)
+nums.sort(reverse=<span class="k">True</span>) <span class="c"># 原地降序</span>
+print(nums)</pre></div>
+<p class="note-text">sort()/reverse() 原地修改，返回 None；不会返回新列表。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 5</span>+ * in<label class="done"><input type="checkbox" data-ls="nctl1_L4_k5"> 已会</label></div>
+<div class="meta-tip">💡 + 拼在一起、* 复制几份、in 问『在不在』。</div>
+<p class="hint">拼接、重复、成员判断。</p>
+<div class="code-block"><pre>a = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>]
+b = [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]
+print(a + b)     <span class="c"># [1,2,3,4,5,6]（新列表）</span>
+print(a * <span class="n">2</span>)     <span class="c"># [1,2,3,1,2,3]</span>
+print(<span class="n">2</span> <span class="k">in</span> a)    <span class="c"># True</span>
+print(<span class="n">9</span> <span class="k">in</span> a)    <span class="c"># False</span></pre></div>
+<p class="note-text">+ 和 * 生成新列表、不改原列表；in 常配合 if 使用。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>用『行李架/储物柜』比喻列表与索引，孩子容易理解。</li>
+<li><strong>要点：</strong>切片左闭右开是重点，反复用例子强化。</li>
+<li><strong>常见错误：</strong>以为切片含右边终点，实际不含。</li>
+<li><strong>常见错误：</strong>sort()/reverse() 直接写 print(lst.sort()) 会打印 None。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L4_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+fruits = ["苹果","梨","西瓜","香蕉","橘子"]
+fruits.append("桃")
+fruits.insert(2, "龙眼")
+fruits.pop(1)
+print(fruits)</p><ul class="options"><li><span class="opt">A.</span>  ['苹果','梨','西瓜','香蕉','橘子']</li>
+<li><span class="opt">B.</span>  ['苹果','龙眼','西瓜','香蕉','橘子','桃']</li>
+<li><span class="opt">C.</span>  ['苹果','梨','龙眼','西瓜','香蕉','橘子']</li>
+<li><span class="opt">D.</span>  ['桃','苹果','梨','龙眼','西瓜','香蕉']</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">append 加 '桃'，insert(2,'龙眼')，pop(1) 删掉索引 1 的 '梨'。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+numbers = [3, 4, 2, 99, 33]
+numbers.sort()
+print(numbers[3])</p><ul class="options"><li><span class="opt">A.</span>  2</li>
+<li><span class="opt">B.</span>  33</li>
+<li><span class="opt">C.</span>  4</li>
+<li><span class="opt">D.</span>  99</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">sort 后为 [2,3,4,33,99]，索引 3 是 33。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">运行下列代码，输出的结果是（　）。
+A = [1, 2, 3, 4]
+print(A[2:])</p><ul class="options"><li><span class="opt">A.</span>  2</li>
+<li><span class="opt">B.</span>  [3]</li>
+<li><span class="opt">C.</span>  [2,3,4]</li>
+<li><span class="opt">D.</span>  [3,4]</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>D</div><div class="explain">A[2:] 从索引 2 取到结尾，即 [3,4]。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">创建列表 Num = [2, 1, 9, 4, 7, 11]，写出：长度、最大值、最小值、总和。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>len=6；max=11；min=1；sum=34</div><div class="explain">用 len()/max()/min()/sum()。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">对列表 Num = [2, 1, 9, 4, 7, 11]：先升序排序，再反转，打印两次结果。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>Num = [2, 1, 9, 4, 7, 11]
+Num.sort()
+print(Num)   # [1, 2, 4, 7, 9, 11]
+Num.reverse()
+print(Num)   # [11, 9, 7, 4, 2, 1]</div><div class="explain">sort() 升序，reverse() 反转，都是原地修改。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-3.html" class="lnav">← L3 运算符与表达式</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-5.html" class="lnav">L5 分支结构 if / elif / else →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L9 异常处理 &amp; 真题实战 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #667eea; --page-soft: #f5f7ff; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L9 · 第 9 课</div>
+<h1>异常处理 &amp; 真题实战</h1>
+<p>try-except、eval，综合应对真题编程题</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>会用 try-except 处理输入异常</li>
+<li>会用 eval() 把字符串当表达式计算</li>
+<li>能综合运用 IPO、分支、循环、列表应对真题编程题</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>try-except —— 护身符<label class="done"><input type="checkbox" data-ls="nctl1_L9_k1"> 已会</label></div>
+<div class="meta-tip">💡 把可能出错的地方『护起来』，出错也不让程序崩溃。</div>
+<p class="hint">可能出错的地方用 try 包起来，出错走 except。</p>
+<div class="code-block"><pre><span class="k">try</span>:
+    a = float(input(<span class="s">"请输入数值: "</span>))
+    print(<span class="s">"你输入的是"</span>, a)
+<span class="k">except</span>:
+    print(<span class="s">"输入有误，请重新输入"</span>)</pre></div>
+<p class="note-text">输入『好的』时 float() 会报错，被 except 捕获，提示重输而不是崩溃。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>循环到输入正确<label class="done"><input type="checkbox" data-ls="nctl1_L9_k2"> 已会</label></div>
+<div class="meta-tip">💡 直到学生做对为止——不停问，问对了才放行。</div>
+<p class="hint">while True + try-except，直到输入合法。</p>
+<div class="code-block"><pre><span class="k">while</span> <span class="k">True</span>:
+    <span class="k">try</span>:
+        x = int(input(<span class="s">"请输入一个整数: "</span>))
+        print(x)
+        <span class="k">break</span>
+    <span class="k">except</span>:
+        print(<span class="s">"输入的不是整数，请重试"</span>)</pre></div>
+<p class="note-text">输入非法就 except，循环继续；输入合法就 break 结束。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>eval —— 当算式算<label class="done"><input type="checkbox" data-ls="nctl1_L9_k3"> 已会</label></div>
+<div class="meta-tip">💡 eval 把字符串『当算式』算出来，一行顶一堆代码。</div>
+<p class="hint">把字符串当作表达式执行并返回结果。</p>
+<div class="code-block"><pre>print(eval(<span class="s">"2 + 3"</span>))      <span class="c"># 5</span>
+print(eval(<span class="s">"3 * 4"</span>))       <span class="c"># 12</span>
+expr = input(<span class="s">"输入算式: "</span>)
+print(<span class="s">"结果:"</span>, eval(expr))</pre></div>
+<p class="note-text">考试中了解它会计算字符串表达式即可。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>真题编程题<label class="done"><input type="checkbox" data-ls="nctl1_L9_k4"> 已会</label></div>
+<div class="meta-tip">💡 操作题拿分关键是『能跑通』，先看清输入/输出格式再动手。</div>
+<p class="hint">读题→拆解→写码→跑通。</p>
+<div class="code-block"><pre><span class="c"># ① 两数之差与和</span>
+a = int(input()); b = int(input())
+print(abs(a - b)); print(a + b)
+
+<span class="c"># ② 评委平均分</span>
+s = input(); nums = list(map(int, s.split()))
+print(round(sum(nums)/len(nums)))
+
+<span class="c"># ③ 最小公倍数</span>
+a,b = int(input()), int(input())
+gcd = max(i <span class="k">for</span> i <span class="k">in</span> range(<span class="n">1</span>, min(a,b)+<span class="n">1</span>) <span class="k">if</span> a%i==<span class="n">0</span> <span class="k">and</span> b%i==<span class="n">0</span>)
+print(a*b//gcd)</pre></div>
+<p class="note-text">① abs 差值；② split+map+round；③ 两数之积 ÷ 最大公约数。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>异常处理用『输入非数字』的场景讲最直观。</li>
+<li><strong>要点：</strong>真题操作题重点练：累加、平均、最大最小、最小公倍数、循环遍历。</li>
+<li><strong>常见错误：</strong>不捕获异常，程序一输错就崩溃退出。</li>
+<li><strong>常见错误：</strong>操作题输入输出格式不符，比如多打印提示文字导致判分错误。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L9_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">运行下列代码，输入“好的”则输出结果是（　）。
+try:
+    a = float(input("请输入数值: "))
+except:
+    print("输入有误")
+else:
+    print(a)</p><ul class="options"><li><span class="opt">A.</span>  我不知道</li>
+<li><span class="opt">B.</span>  输入有误</li>
+<li><span class="opt">C.</span>  请输入数值</li>
+<li><span class="opt">D.</span>  没有输出结果</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">float("好的") 会报错，被 except 捕获，输出“输入有误”。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个 try-except 程序：让用户反复输入整数，直到输入合法才结束。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>while True:
+    try:
+        x = int(input())
+        print(x)
+        break
+    except:
+        print("输入的不是整数，请重试")</div><div class="explain">try 里放可能出错的操作，except 处理异常。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 eval 计算用户输入的一个表达式（如 2*3+4）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>expr = input("输入算式: ")
+print(eval(expr))</div><div class="explain">eval 把字符串当表达式计算。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">真题·分别输入两个正整数，输出两数的差（大数减小数）与两数的和。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a = int(input())
+b = int(input())
+print(max(a, b) - min(a, b))
+print(a + b)</div><div class="explain">用 max/min 求大数减小数。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">真题·输入 5 个评委的分数（空格隔开），输出平均分（四舍五入到整数）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>s = input()
+nums = list(map(int, s.split()))
+print(round(sum(nums) / len(nums)))</div><div class="explain">split() 拆分，map(int) 转整数，round() 四舍五入。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">真题·输入两个正整数，输出它们的最小公倍数。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>a, b = int(input()), int(input())
+# 先求最大公约数
+for i in range(1, min(a, b) + 1):
+    if a % i == 0 and b % i == 0:
+        gcd = i
+print(a * b // gcd)</div><div class="explain">最小公倍数 = 两数之积 // 最大公约数。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-8.html" class="lnav">← L8 函数与小海龟绘图</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<span class="lnav dim">已到最后一课 →</span>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L8 函数与小海龟绘图 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #8e44ad; --page-soft: #f9f5ff; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L8 · 第 8 课</div>
+<h1>函数与小海龟绘图</h1>
+<p>def 复用代码，turtle 画出图形</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>掌握函数定义 def、参数、返回值 return</li>
+<li>把重复代码封装成函数</li>
+<li>会用 turtle 基本命令画线、转向、画正多边形</li>
+<li>会用颜色填充与函数封装绘图</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>函数 —— 工具箱<label class="done"><input type="checkbox" data-ls="nctl1_L8_k1"> 已会</label></div>
+<div class="meta-tip">💡 函数像工具箱：把常用工具装进去，随取随用。</div>
+<p class="hint">把一段能重复用的代码包起来起个名。</p>
+<div class="code-block"><pre><span class="k">def</span> add(a, b):
+    <span class="k">return</span> a + b
+
+result = add(<span class="n">3</span>, <span class="n">5</span>)
+print(result)   <span class="c"># 8</span>
+
+<span class="k">def</span> greet(name):
+    print(<span class="s">"你好,"</span>, name)
+
+greet(<span class="s">"小明"</span>)</pre></div>
+<p class="note-text">def 函数名(参数): 函数体缩进；return 返回结果，没有 return 返回 None。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>参数与返回值<label class="done"><input type="checkbox" data-ls="nctl1_L8_k2"> 已会</label></div>
+<div class="meta-tip">💡 参数是投进去的材料，return 是交回来的成品。</div>
+<p class="hint">参数是输入，返回值是算出的结果。</p>
+<div class="code-block"><pre><span class="k">def</span> avg(nums):
+    <span class="k">return</span> sum(nums) / len(nums)
+
+print(avg([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>]))   <span class="c"># 2.5</span>
+
+<span class="k">def</span> divide_round(a, b):
+    <span class="k">if</span> b == <span class="n">0</span>:
+        <span class="k">return</span> <span class="s">"除数不能为0"</span>
+    <span class="k">return</span> round(a / b, <span class="n">2</span>)  <span class="c"># 保留两位小数</span>
+
+print(divide_round(<span class="n">10</span>, <span class="n">3</span>))  <span class="c"># 3.33</span></pre></div>
+<p class="note-text">round(x,2) 四舍五入保留两位；函数里先用 if 处理边界。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>小海龟 · 基本命令<label class="done"><input type="checkbox" data-ls="nctl1_L8_k3"> 已会</label></div>
+<div class="meta-tip">💡 小海龟是画笔：前进、后退、转向、抬笔落笔。</div>
+<p class="hint">turtle 像一支能拐弯的画笔。</p>
+<div class="code-block"><pre><span class="k">import</span> turtle <span class="k">as</span> t
+
+t.forward(<span class="n">100</span>)    <span class="c"># 前进</span>
+t.left(<span class="n">90</span>)       <span class="c"># 左转90度</span>
+t.pensize(<span class="n">5</span>)      <span class="c"># 画笔粗细</span>
+t.pencolor(<span class="s">"red"</span>) <span class="c"># 画笔颜色</span>
+t.penup()         <span class="c"># 抬笔（不画线）</span>
+t.pendown()       <span class="c"># 落笔</span>
+t.hideturtle()    <span class="c"># 隐藏小海龟</span>
+t.done()          <span class="c"># 保持窗口</span></pre></div>
+<p class="note-text">常用命令：forward/backward、left/right、penup/pendown、pencolor/pensize、circle。end 别忘了 t.done()。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>画正多边形<label class="done"><input type="checkbox" data-ls="nctl1_L8_k4"> 已会</label></div>
+<div class="meta-tip">💡 每次前进后转 360/n 度，走 n 次就回到原点。</div>
+<p class="hint">正 n 边形：外角 = 360 / n。</p>
+<div class="code-block"><pre><span class="k">import</span> turtle <span class="k">as</span> t
+
+<span class="k">def</span> draw_polygon(n, length, color):
+    t.pencolor(color)
+    angle = <span class="n">360</span> / n
+    <span class="k">for</span> _ <span class="k">in</span> range(n):
+        t.forward(length)
+        t.left(angle)
+
+draw_polygon(<span class="n">3</span>, <span class="n">80</span>, <span class="s">"red"</span>)    <span class="c"># 正三角形</span>
+draw_polygon(<span class="n">4</span>, <span class="n">100</span>, <span class="s">"blue"</span>)  <span class="c"># 正方形</span>
+draw_polygon(<span class="n">6</span>, <span class="n">60</span>, <span class="s">"green"</span>)  <span class="c"># 正六边形</span>
+t.done()</pre></div>
+<p class="note-text">关键：每次前进后转 360/n 度。n、length、color 参数让函数能画任意正多边形。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 5</span>颜色填充<label class="done"><input type="checkbox" data-ls="nctl1_L8_k5"> 已会</label></div>
+<div class="meta-tip">💡 先告诉海龟『我要上色』，画完再『上色』。</div>
+<p class="hint">begin_fill 开始，end_fill 填充。</p>
+<div class="code-block"><pre><span class="k">import</span> turtle <span class="k">as</span> t
+
+t.begin_fill()
+t.fillcolor(<span class="s">"red"</span>)
+<span class="k">for</span> _ <span class="k">in</span> range(<span class="n">4</span>):
+    t.forward(<span class="n">100</span>)
+    t.left(<span class="n">90</span>)
+t.end_fill()
+t.done()</pre></div>
+<p class="note-text">begin_fill() 开始记录，画完封闭图形后 end_fill() 填充。</p>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>函数先讲『为什么用』（复用、清晰），再讲语法。</li>
+<li><strong>要点：</strong>小海龟部分孩子很喜欢，多做几个图形（正方形、五角星、风车）。</li>
+<li><strong>常见错误：</strong>忘写 return 导致拿到 None。</li>
+<li><strong>常见错误：</strong>正多边形的角度 360/n 算错。</li>
+<li><strong>常见错误：</strong>忘记写 t.done() 导致窗口一闪而过。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L8_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">写一个函数 sum_range(n)，计算 0 到 n 的和，并调用输出 sum_range(5)。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>def sum_range(n):
+    return sum(range(n + 1))
+
+print(sum_range(5))  # 15</div><div class="explain">range(n+1) 生成 0~n。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">写一个画正 N 边形的函数：输入 n（边数）和 a（边长），画出正 n 边形；若 n&lt;3 则结束。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
+
+def draw_polygon(n, a):
+    if n &lt; 3:
+        return
+    angle = 360 / n
+    for _ in range(n):
+        t.forward(a)
+        t.left(angle)
+
+n, a = int(input()), int(input())
+draw_polygon(n, a)
+t.done()</div><div class="explain">n=3 画正三角形，n=4 画正方形；n&lt;3 直接结束。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 turtle 画一个边长 100 的蓝色正方形（含颜色填充）。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>import turtle as t
+t.pencolor("blue")
+t.begin_fill()
+t.fillcolor("blue")
+for _ in range(4):
+    t.forward(100)
+    t.left(90)
+t.end_fill()
+t.done()</div><div class="explain">begin_fill()/end_fill() 填充封闭图形。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<a href="lesson-7.html" class="lnav">← L7 字符串与列表的操作</a>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-9.html" class="lnav">L9 异常处理 &amp; 真题实战 →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>

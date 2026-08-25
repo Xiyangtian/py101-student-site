@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L1 让电脑开口说话 · 知识点与作业</title>
+<link rel="stylesheet" href="site.css">
+<style>:root { --page-accent: #27ae60; --page-soft: #f0f9ff; }</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<a href="index.html" class="back-nav">← 返回课程首页</a>
+<div class="prog"><div class="prog-fill" id="progfill"></div><span id="progtext"></span></div>
+</div>
+
+<div class="page-header">
+<div class="module-tag">L1 · 第 1 课</div>
+<h1>让电脑开口说话</h1>
+<p>print、input、变量、IPO——第一步让电脑听懂你</p>
+</div>
+
+<div class="content-card features-card">
+<div class="section-title">🎯 本节目标</div>
+<ul class="feature-list"><li>知道 Python 是什么，理解解释型/编译型语言的区别</li>
+<li>写出第一个程序：print() 输出</li>
+<li>理解 IPO 模型：输入→处理→输出</li>
+<li>认识变量与基本数据类型</li></ul>
+</div>
+
+<h2 class="sec-head">📖 知识点 <span class="sechint">读一读，会的就点「已会」</span></h2>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 1</span>Python 是什么？<label class="done"><input type="checkbox" data-ls="nctl1_L1_k1"> 已会</label></div>
+<div class="meta-tip">💡 Python 像一门『普通话』，你写一行，电脑就照着做一行。</div>
+<p class="hint">Python 是一门编程语言，是计算机能读懂的语言。</p>
+<div class="code-block"><pre><span class="c"># 输出一句话到屏幕</span>
+print(<span class="s">"Hello World"</span>)
+
+<span class="c"># 也可以输出算好的结果</span>
+print(<span class="n">1</span> + <span class="n">2</span>)</pre></div>
+<p class="note-text">print() 就是把内容显示到屏幕的指令。Python 是解释型：一句一句边解释边执行。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 2</span>print —— 电脑的大喇叭<label class="done"><input type="checkbox" data-ls="nctl1_L1_k2"> 已会</label></div>
+<div class="meta-tip">💡 print = 电脑拿大喇叭喊话，喊的内容要加引号告诉电脑『这是文字』。</div>
+<p class="hint">print() 把括号里的内容打印到屏幕上。</p>
+<div class="code-block"><pre><span class="c"># 第一个程序</span>
+print(<span class="s">"Hello World"</span>)
+print(<span class="n">1</span> + <span class="n">2</span>)</pre></div>
+<p class="note-text">print 里放字符串要加引号；放数字直接写。中文输出也不难。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 3</span>input —— 电脑的耳朵<label class="done"><input type="checkbox" data-ls="nctl1_L1_k3"> 已会</label></div>
+<div class="meta-tip">💡 input 是耳朵，print 是嘴巴。电脑等你说完再回应。</div>
+<p class="hint">input() 接收键盘输入；得到的一定是字符串。</p>
+<div class="code-block"><pre>name = input(<span class="s">"请输入你的名字: "</span>)
+print(<span class="s">"你好, "</span> + name)
+
+a = int(input(<span class="s">"请输入一个整数: "</span>))
+print(<span class="s">"你输入的数是"</span>, a)</pre></div>
+<p class="note-text">input() 返回字符串，要当数字算得先用 int()/float() 转。</p>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 4</span>IPO —— 程序的骨架<label class="done"><input type="checkbox" data-ls="nctl1_L1_k4"> 已会</label></div>
+<div class="meta-tip">💡 写程序先想三件事：要什么输入、怎么处理、要什么输出。</div>
+<p class="hint">I 输入 → P 处理 → O 输出。</p>
+<div class="flow-box">I nput (输入)   ──►   P rocessing (加工)   ──►   O utput (输出)
+   input()                运算 / 判断 / 循环             print()</div>
+</div>
+<div class="content-card step-card">
+<div class="section-title"><span class="step-num">知识点 5</span>变量 &amp; 冯·诺依曼<label class="done"><input type="checkbox" data-ls="nctl1_L1_k5"> 已会</label></div>
+<div class="meta-tip">💡 变量 = 贴上名字标签的碗；电脑 = 输入→存储→运算→控制→输出。</div>
+<p class="hint">变量是装数据的容器；了解电脑的经典结构。</p>
+<div class="node-tree"><span class="root">冯·诺依曼体系结构</span> <span class="note">（存储程序 + 五大部件）</span><span class="child">├── 输入设备</span> <span class="note">（键盘鼠标）</span><span class="child">├── 存储器</span> <span class="note">（存程序和数据）</span><span class="child">├── 运算器</span> <span class="note">（做运算）</span><span class="child">├── 控制器</span> <span class="note">（指挥）</span><span class="child">└── 输出设备</span> <span class="note">（显示器）</span></div>
+</div>
+<div class="teacher-note"><div class="section-title">📌 老师注记</div><ul class="feature-list"><li><strong>要点：</strong>第一课重点是『能跑起来』，让学生成功运行第一个程序比讲完理论更重要。</li>
+<li><strong>要点：</strong>用 print/input 反复演示，让学生感受到『代码→运行→结果』。</li>
+<li><strong>常见错误：</strong>以为 input() 直接得到数字，其实得到的是字符串，需要 int()/float() 转换。</li>
+<li><strong>常见错误：</strong>变量名用数字开头或用关键字导致语法报错。</li>
+</ul></div>
+
+<h2 class="sec-head">📝 本课作业 <label class="done"><input type="checkbox" data-ls="nctl1_L1_hw"> 作业已完成</label></h2>
+<div class="content-card hw-card"><div class="section-title">第 1 题</div><p class="q-text">在 Python 语言中，下列说法正确的是（　）。</p><ul class="options"><li><span class="opt">A.</span>  range 是一个关键字</li>
+<li><span class="opt">B.</span>  IPO 程序编写方法包括输入、处理和输出</li>
+<li><span class="opt">C.</span>  程序结构只有分支结构和循环结构两种</li>
+<li><span class="opt">D.</span>  Python 只能在 Windows 环境下运行</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>B</div><div class="explain">range 是内置函数不是关键字；程序结构有三种（顺序、分支、循环）；Python 跨平台。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 2 题</div><p class="q-text">运行 print("Hello World")，屏幕会输出（　）。</p><ul class="options"><li><span class="opt">A.</span>  Hello World</li>
+<li><span class="opt">B.</span>  'Hello World'</li>
+<li><span class="opt">C.</span>  程序报错</li>
+<li><span class="opt">D.</span>  没有输出</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>A</div><div class="explain">print 把引号里的内容打印到屏幕，输出 Hello World。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 3 题</div><p class="q-text">用 input() 获取到的数据，类型是（　）。</p><ul class="options"><li><span class="opt">A.</span>  整数</li>
+<li><span class="opt">B.</span>  浮点数</li>
+<li><span class="opt">C.</span>  字符串</li>
+<li><span class="opt">D.</span>  布尔</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>C</div><div class="explain">input() 返回的一定是字符串，要当数字用需 int()/float() 转换。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 4 题</div><p class="q-text">IPO 中 I、P、O 分别代表（　）。</p><ul class="options"><li><span class="opt">A.</span>  输入、处理、输出</li>
+<li><span class="opt">B.</span>  输出、处理、输入</li>
+<li><span class="opt">C.</span>  输入、输出、处理</li>
+<li><span class="opt">D.</span>  输入、存储、输出</li></ul><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>A</div><div class="explain">I 输入(input) → P 处理(processing) → O 输出(output)。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 5 题</div><p class="q-text">现代计算机之父是 ______（人名），他提出的结构叫 ______。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>冯·诺依曼；冯·诺依曼体系结构</div><div class="explain">常考常识题。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 6 题</div><p class="q-text">计算机发展经历了 ______ 代，第二代的电子元件是 ______。</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>四；晶体管</div><div class="explain">第一代电子管，第二代晶体管，第三代中小规模集成电路，第四代大规模/超大规模集成电路。</div></details></div>
+<div class="content-card hw-card"><div class="section-title">第 7 题</div><p class="q-text">写一个程序：用 input() 让用户输入自己的名字，再用 print() 输出“你好，XXX！”</p><details class="answer-details"><summary>展开参考答案</summary><div class="answer"><strong>答案：</strong>name = input("请输入你的名字: ")
+print("你好, " + name)</div><div class="explain">注意 input() 得到的是字符串。</div></details></div>
+
+<div class="note-card">
+<h2>📌 自助使用说明</h2>
+<ul>
+<li>先读上面「知识点」，会的勾「已会」；再独立完成下面「作业」，最后展开参考答案核对。</li>
+<li>选择题直接在网页上做；编程题请在 Python 里写出来并运行。</li>
+<li>看完用底部「上一课 / 下一课」继续，进度会记在你浏览器里（换设备不保留）。</li>
+</ul>
+</div>
+
+<div class="lesson-nav">
+<span class="lnav dim">← 这是第一课</span>
+<a href="index.html" class="lnav mid">📚 课程首页</a>
+<a href="lesson-2.html" class="lnav">L2 变量与数据类型 →</a>
+</div>
+</div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var key=function(c){return c.getAttribute('data-ls')||c.getAttribute('data-prog')};
+  // 知识点/作业 已会打勾
+  var cbs=[].slice.call(document.querySelectorAll('input[type=checkbox][data-ls]'));
+  var kh=cbs.filter(function(c){return (c.getAttribute('data-ls')||'').indexOf('_k')>=0});
+  cbs.forEach(function(c){
+    var k=c.getAttribute('data-ls');
+    if(g(k)==='1') c.checked=true;
+    c.addEventListener('change',function(){ s(k, c.checked?'1':'0'); update(); });
+  });
+  function update(){
+    var total=kh.length, done=kh.filter(function(c){return c.checked}).length;
+    var fill=document.getElementById('progfill'), txt=document.getElementById('progtext');
+    if(fill) fill.style.width=(total?(done/total*100):0)+'%';
+    if(txt) txt.textContent='已会 '+done+' / '+total+' 个知识点';
+  }
+  update();
+  // 首页：各课进度徽标
+  document.querySelectorAll('[data-prog]').forEach(function(el){
+    var key=el.getAttribute('data-prog'); var n=parseInt(el.getAttribute('data-total')||'0'); var d=0;
+    for(var i=1;i<=n;i++){ if(g(key+'_k'+i)==='1') d++; }
+    if(d>0){ el.textContent='已会 '+d+'/'+n; el.classList.add('on'); }
+  });
+})();
+</script>
+</body>
+</html>
